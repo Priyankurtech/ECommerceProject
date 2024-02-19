@@ -1,17 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <meta charset="ISO-8859-1">
+    <title>OTP Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button[type="button"] {
+            background-color: #ccc;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .message {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .success {
+            color: #4CAF50;
+        }
+
+        .fail {
+            color: #f44336;
+        }
+    </style>
 </head>
 <body>
-<h1 th:text="${successMessage}"></h1>
-<h1 th:text="${failMessage}"></h1>
-<form action="/verify-otp" method="post">
-<input type="hidden" name="id" th:value="${id}">
-Enter Otp: <input type="number" name="otp" >
-<button>Submit</button>
-<a th:href="'/resend-otp/'+${id}"><button type="button">Resend Otp</button></a>
-</form>
+    <h1 th:text="${successMessage}" class="message success"></h1>
+    <h1 th:text="${failMessage}" class="message fail"></h1>
+    <form action="/verify-otp" method="post">
+        <input type="hidden" name="id" th:value="${id}">
+        <label for="otp">Enter OTP:</label>
+        <input type="number" name="otp" id="otp">
+        <button type="submit">Submit</button>
+        <a th:href="'/resend-otp/'+${id}"><button type="button">Resend OTP</button></a>
+    </form>
 </body>
 </html>

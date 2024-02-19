@@ -23,7 +23,7 @@ public class MailSendingHelper {
 		MimeMessageHelper helper = new MimeMessageHelper(message);
 
 		try {
-			helper.setFrom("saishkulkarni7@gmail.com", "s13shMyshop");
+			helper.setFrom("priyankurp1997@gmail.com", "ankur");
 			helper.setTo(customer.getEmail());
 			helper.setSubject("Veification OTP");
 			String gen = "";
@@ -46,7 +46,7 @@ public class MailSendingHelper {
 		MimeMessageHelper helper = new MimeMessageHelper(message);
 
 		try {
-			helper.setFrom("saishkulkarni7@gmail.com", "s13shMyshop");
+			helper.setFrom("priyankurp1997@gmail.com", "ankur");
 			helper.setTo(customer.getEmail());
 			helper.setSubject("Veification OTP");
 			String gen = "";
